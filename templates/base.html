@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block add_meta %}
+        {% endblock %}
+
+        <!--Favicon-->
+        <link rel="icon" href="#">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!--Font Awesome Icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+        <!--Base CSS-->
+        <link rel="stylesheet" href="./static/css/base.css">
+        {% block add_css %}
+        {% endblock %}
+
+        <!--JS-->
+        {% block js_library_pre %}
+        {% endblock %}
+        <!--JQuery-->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!--Bootstrap JS-->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        {% block js_library_post %}
+        {% endblock %}
+
+        <title>Liam Hall Portfolio{% block add_title %}{% endblock %}</title>
+  </head>
+  <body>
+    <a id="top-of-page"></a>
+    <!--Site Header-->
+    <header class="site-header">
+
+        <nav class="site-header__nav flex-container">
+
+            <!--logo-->
+            <a class="logo flex-item flex-largest" href="#">
+                <span class="orbit mr-2">LIAM HALL</span>
+                Full Stack Developer
+            </a>
+            <!--Bootstrap Collapsible Menu-->
+            <div class="navbar-expand-custom flex-item">
+                
+                <!--Mobile Nav Collapse Button-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!--Site Nav-->
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="site-header__navbar navbar-nav">
+                        <li class="mobile-only">
+                           <button class="nav-item" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-times"></i> Close</button>
+                        </li>
+                        <li>
+                           <a class="nav-item" href="#projects">Projects</a>
+                        </li>
+                        <li>
+                           <a class="nav-item" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="./static/documents/cv_liam_d_hall.pdf" target="_blank">Resume</a>
+                        </li>
+                        <li>
+                           <a class="nav-item" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Main Page Content-->
+    <main>
+        {% block page_header %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        {% block footer %}
+        {% endblock %}
+        <a href="#top-of-page" class="footer__back-to-top"><i class="fas fa-chevron-up"></i> <strong>BACK TO TOP</strong> <i class="fas fa-chevron-up"></i></a>
+        <div class="row">
+            <!--Products-->
+            <div class="footer__item col-12 col-md-4">
+                <h4 class="footer__title"><strong>PRODUCTS</strong></h4>
+                <ul class="footer__list">
+                    <li>
+                        <a class="nav-item" href="#">All Products</a>
+                    </li>
+                    <li>
+                        <a class="nav-item" href="#">Goggles</a>
+                    </li>
+                    <li>
+                        <a class="nav-item" href="#">Beanies</a>
+                    </li>
+                    <li>
+                        <a class="nav-item" href="#">Hoodies</a>
+                    </li>
+                    <li>
+                        <a class="nav-item" href="#">Jumpers</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Account-->
+            <div class="footer__item col-12 col-md-4 mt-5 mt-md-0">
+                <h4 class="footer__title"><strong>ACCOUNT</strong></h4>
+                <ul class="footer__list">
+                        <li>
+                            <a href="#">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Orders</a>
+                        </li>
+                            <li>
+                                <a href="#">Product Management</a>
+                            </li>
+                        <li>
+                            <a href="#">Logout</a>
+                        </li>
+                        <li>
+                            <a href="#">Register</a>
+                        </li>
+                        <li>
+                            <a href="#">Login</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!--Post Load JS-->
+    <script src="/static/scripts/tab-toggle.js"></script>
+    <script src="/static/scripts/hero-splash.js"></script>
+    {% block add_postload_js %}
+    {% endblock %}
+  </body>
+</html>
