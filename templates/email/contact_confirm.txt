@@ -1,0 +1,8 @@
+Thank you {{context.first_name}} for contacting me. 
+
+I will be in touch within the next 48 hours.
+
+Below is a copy of the email you sent me for your records:
+___________________
+
+{{context.message}}

@@ -1,0 +1,11 @@
+You have a new message from {{context.first_name.title()}} {{context.last_name.title()}} @ {{context.company_name.title()}}
+
+Message:
+
+{{context.message}}
+
+_____________________
+First Name = {{context.first_name}}
+Last Name = {{context.last_name}}
+Company Name = {{context.company_name}}
+Email Name = {{context.sender_email}}
