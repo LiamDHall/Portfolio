@@ -1,0 +1,472 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <section class="hero">
+      <div class="hero__bg">
+         <div class="hero__inner">
+            <h1 class="hero__title orbit"><strong>Liam Hall</strong></h1>
+            <h1 class="hero__tagline"><strong>Full Stack Developer</strong></h1>
+            <a class="cta cta--hero" href="#projects">Projects</a>
+            <a class="cta cta--hero" href="#about">About</a>
+            <a class="cta cta--hero" href="./static/documents/cv_liam_d_hall.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a class="cta cta--hero" href="#contact">Contact</a>
+         </div>
+      </div>
+   </section>
+
+   <!--About-->
+   <a id="about" class="section-link"></a>
+   <section class="about py-5">
+      <h2 class="title title--about orbit mb-5">It's All About Me</h2>
+      <div class="clearfix px-4">
+         <div class="w-50 float-left pr-4">
+            <h3>Hi I'm Liam. <br>I am a Full Stack Developer based in the UK with a background in the design.</h3>
+            <p>
+               Over the last year I have learnt how to bring my imagination to the web.
+               I love creating eye catching application with UIs users can easily navigate.
+            </p>
+            <p>
+               I got into coding because I hated the limitions of Shopify themes and how little you could change.
+               I am very much of the idea that if you can imagine something, it can be created! So I started taking a look under the
+               hood and tinkering with what I could find. I learnt a lot about HTML and CSS but I really got into the nit and git when I
+               enrolled in the <strong>Code Institute's Full Stack Software Development Diploma</strong> where I created E-commerce, Games, Web Applications and Sites.
+            </p>
+            <p>
+               One of my many reasons for getting into coding was for the problem solving. 
+               I love a challenge and coding provides an endless varity.
+            </p>
+            In my free time I enjoy snowboarding and I'm quite the avid baker.
+         </div>
+         <div class="w-50 float-right">
+            test
+         </div>
+      </div>
+   </section>
+   
+   <!--Projects-->
+   <a id="projects" class="section-link"></a>
+   <section class="projects py-5">
+      <div class="row">
+         <div class="col-12">
+            <h2 class="title title--projects orbit">Projects</h2>
+            <p class="text-center">Sites and apps I have created.</p>
+            <div class="row">
+
+               <!--XRYO-->
+               <div class="col-12 my-5">
+                  <div class="row">
+                     <div class="col-8">
+                        <h3 class="project__title orbit font-weight-bold d-inline-block">XRYO</h3>
+                        <div class="card">
+                           <p class="mb-0">
+                              A <strong>Django</strong> based e-commerce site that focus on all major aspects of building and deploying a website, building a responsive interactive front end UI, 
+                              creating a server side web application and finally performing CRUD operations on a database.
+                              <strong>Stripe</strong> is used for the payment system and takes advantage of their webhooks to confirm payments have been completed.
+                              <strong>AWS S3</strong> bucket provide a cloud based storage for all static and media files.
+                           </p>
+                        </div>
+                        <ul class="projects__list orbit font-weight-bold">
+                           <li>
+                              <button class="cta project-tab-btn active" value="features">Features</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="languages">Languages</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="framework">Framework & Libraries</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="database">Database</button>
+                           </li>
+                        </ul>
+                        <hr class="projects__line mt-0">
+                        <div class="features project-tab">
+                           <ul>
+                              <li>
+                                 Session Bag, Checkout, Stripe Payment & Webhooks
+                              </li>
+                              <li>
+                                 Automated Emails
+                              </li>
+                              <li>
+                                 User Login and Profile / Order History
+                              </li>
+                              <li>
+                                 Product Filtering and Search
+                              </li>
+                              <li>
+                                 Product Management (CRUD Opperations) For Admins
+                              </li>
+                              <li>
+                                 Swaping Related Images For Products
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="languages project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <i class="fab fa-python mr-3"></i>Python 
+                              </li>
+                              <li>
+                                 <i class="fab fa-js mr-3"></i>JavaScript 
+                              </li>
+                              <li>
+                                 <i class="fab fa-html5 mr-3"></i>HTML 
+                              </li>
+                              <li>
+                                 <i class="fab fa-css3-alt mr-3"></i>CSS
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="framework project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li> 
+                                 <strong class="mr-3">Frame:</strong>Django
+                              </li>
+                              <li>
+                                 <strong class="mr-3">JS:</strong>JQuery
+                              </li>
+                              <li> 
+                                 <strong class="mr-3">CSS:</strong>Bootstrap
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="database project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li> 
+                                 <strong class="mr-3">SQL:</strong>PostgreSQL
+                              </li>
+                              <li>
+                                 <strong class="mr-3">Cloud Storage:</strong> AWS S3
+                              </li>
+                           </ul>
+                        </div>
+                        <hr>
+                        <a class="cta cta--orange d-inline-block mb-2" href="https://xryo.herokuapp.com/" target="_blank">
+                           View Site <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a class="cta cta--github d-inline-block mb-2" href="https://github.com/LiamDHall/XRYO" target="_blank">
+                           <i class="fab fa-github"></i> Github
+                        </a>
+                     </div>
+                     <div class="col-4">
+                        <a href="#">
+                           <img class="card-img" src="static/images/xryo_desktop_low_res.jpg">
+                        </a>
+                     </div>
+               </div>
+
+               <!--Geometric-->
+               <div class="col-12  my-5">
+                  <div class="row">
+                     <div class="col-4">
+                        <a href="#">
+                           <img class="card-img" src="static/images/geometric_desktop_low_res.jpg">
+                        </a>
+                     </div>
+                     <div class="col-8">
+                        <h3 class="project__title orbit font-weight-bold d-inline-block">Geometric</h3>
+                        <div class="card">
+                           <p class="mb-0">
+                              Geometric is an endless scroller where the movement the of the world and the objects around them give the simulation of movement.
+                              The game contains three types of obstacles. The three obstacles then have unique mechanics which the player has to interact with differently to pass.
+                              The back end of the game has an easy to use level mapper that allows developers to create and edit levels.
+                           </p>
+                        </div>
+                        <ul class="projects__list orbit font-weight-bold">
+                           <li>
+                              <button class="cta project-tab-btn active" value="features">Features</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="languages">Languages</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="framework">Framework & Libraries</button>
+                           </li>
+                        </ul>
+                        <hr class="projects__line mt-0">
+                        <div class="features project-tab">
+                           <ul>
+                              <li>
+                                 Custom Key Mapping
+                              </li>
+                              <li>
+                                 Character Customisation
+                              </li>
+                              <li>
+                                 Obstacle Variation each with Unique Mechanics
+                              </li>
+                              <li>
+                                 Product Filtering and Search
+                              </li>
+                              <li>
+                                 Varied Obstacle Courses with Level Mapping
+                              </li>
+                              <li>
+                                 Custom Error Pages
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="languages project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <i class="fab fa-js mr-3"></i>JavaScript 
+                              </li>
+                              <li>
+                                 <i class="fab fa-html5 mr-3"></i>HTML 
+                              </li>
+                              <li>
+                                 <i class="fab fa-css3-alt mr-3"></i>CSS
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="framework project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <strong class="mr-3">JS:</strong>JQuery
+                              </li>
+                              <li> 
+                                 <strong class="mr-3">CSS:</strong>Bootstrap
+                              </li>
+                           </ul>
+                        </div>
+                        <hr>
+                        <a class="cta cta--orange d-inline-block mb-2" href="https://liamdhall.github.io/Geometric/" target="_blank">
+                           Play <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a class="cta cta--github d-inline-block mb-2" href="https://github.com/LiamDHall/Geometric" target="_blank">
+                           <i class="fab fa-github"></i> Github
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+               <!--Mixology-->
+               <div class="col-12  my-5">
+                  <div class="row">
+                     <div class="col-8">
+                        <h3 class="project__title orbit font-weight-bold d-inline-block">Mixology</h3>
+                        <div class="card">
+                           <p class="mb-0">
+                              A web app build with <strong>Flask</strong>. Mixology provides all the information you need to your favourite cocktails.
+                              The user can preform all CRUD operation on the content they create as well as search all the data on the site.
+                           </p>
+                        </div>
+                        <ul class="projects__list orbit font-weight-bold">
+                           <li>
+                              <button class="cta project-tab-btn active" value="features">Features</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="languages">Languages</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="framework">Framework & Libraries</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="database">Database</button>
+                           </li>
+                        </ul>
+                        <hr class="projects__line mt-0">
+                        <div class="features project-tab">
+                           <ul>
+                              <li>
+                                 Users can preform all CRUD opperation on their own Cocktails
+                              </li>
+                              <li>
+                                 Cocktail Bookmarking
+                              </li>
+                              <li>
+                                 Search for Cocktails
+                              </li>
+                              <li>
+                                 Reviews
+                              </li>
+                              <li>
+                                 Data Filtering
+                              </li>
+                              <li>
+                                 User Login and Profile
+                              </li>
+                              <li>
+                                 Custom Error Pages
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="languages project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <i class="fab fa-python mr-3"></i>Python 
+                              </li>
+                              <li>
+                                 <i class="fab fa-js mr-3"></i>JavaScript 
+                              </li>
+                              <li>
+                                 <i class="fab fa-html5 mr-3"></i>HTML 
+                              </li>
+                              <li>
+                                 <i class="fab fa-css3-alt mr-3"></i>CSS
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="framework project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li> 
+                                 <strong class="mr-3">Frame:</strong>Flask
+                              </li>
+                              <li>
+                                 <strong class="mr-3">JS:</strong>JQuery
+                              </li>
+                              <li> 
+                                 <strong class="mr-3">CSS:</strong>Bootstrap
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="database project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li> 
+                                 <strong class="mr-3">NoSQL:</strong>MongoDB
+                              </li>
+                           </ul>
+                        </div>
+                        <hr>
+                        <a class="cta cta--orange d-inline-block mb-2" href="https://mixology-cocktails.herokuapp.com/home" target="_blank">
+                           View Site <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a class="cta cta--github d-inline-block mb-2" href="https://github.com/LiamDHall/Mixology" target="_blank">
+                           <i class="fab fa-github"></i> Github
+                        </a>
+                     </div>
+                     <div class="col-4">
+                        <a href="#">
+                           <img class="card-img" src="static/images/mixology_desktop_low_res.jpg">
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+               <!--STEEZ-->
+               <div class="col-12  my-5">
+                  <div class="row">
+                     <div class="col-4">
+                        <a href="#">
+                           <img class="card-img" src="static/images/steez_desktop_low_res.jpg">
+                        </a>
+                     </div>
+                     <div class="col-8">
+                        <h3 class="project__title orbit font-weight-bold d-inline-block">STEEZ</h3>
+                        <div class="card">
+                           <p class="mb-0">
+                              The first website I ever created! A UI, front end focused project using mainly HTML and CSS with a splash of JS.
+                              STEEZ provides a platform for a fictional alpine snowboarding school to allow users to find information about the school
+                              and book lession. Please keep in mind this site was created before I learnt back end functionality and templating.
+                           </p>
+                        </div>
+                        <ul class="projects__list orbit font-weight-bold">
+                           <li>
+                              <button class="cta project-tab-btn active" value="features">Features</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="languages">Languages</button>
+                           </li>
+                           <li>
+                              <button class="cta project-tab-btn" value="framework">Framework & Libraries</button>
+                           </li>
+                        </ul>
+                        <hr class="projects__line mt-0">
+                        <div class="features project-tab">
+                           <ul>
+                              <li>
+                                 Google Translate (7 Languages Available)
+                              </li>
+                              <li>
+                                 Responsive Design
+                              </li>
+                              <li>
+                                 Breadcrumb Navbar
+                              </li>
+                              <li>
+                                 Location and Google Map (in footer)
+                              </li>
+                              <li>
+                                 Current Page Indicator
+                              </li>
+                              <li>
+                                 Landing Page Hero Image
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="languages project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <i class="fab fa-html5 mr-3"></i>HTML 
+                              </li>
+                              <li>
+                                 <i class="fab fa-js mr-3"></i>JavaScript 
+                              </li>
+                              <li>
+                                 <i class="fab fa-css3-alt mr-3"></i>CSS
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="framework project-tab d-none">
+                           <ul class="list-unstyled">
+                              <li>
+                                 <strong class="mr-3">JS:</strong>JQuery
+                              </li>
+                              <li> 
+                                 <strong class="mr-3">CSS:</strong>Bootstrap
+                              </li>
+                           </ul>
+                        </div>
+                        <hr>
+                        <a class="cta cta--orange d-inline-block mb-2" href="https://liamdhall.github.io/STEEZ-Snowboard-School/" target="_blank">
+                           View Site <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a class="cta cta--github d-inline-block mb-2" href="https://github.com/LiamDHall/STEEZ-Snowboard-School" target="_blank">
+                           <i class="fab fa-github"></i> Github
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--Contact-->
+   <a id="contact" class="section-link"></a>
+   <section class="contact py-5">
+      <h2 class="title title-contact orbit">Contact</h2>
+      <p class="text-center">Let Build Something Great, Togther!</p>
+      <p class="text-center">To discuss working together please fill in the form below.</p>
+      <p class="text-center">All fields with a <span class="highlight highlight--important notranslate">*</span> are required.</p>
+      <div class="row">
+         <div class="col-12">
+            <form id="contact-form" action="#" method="POST">
+               <div class="form__row row">
+                  <div class="form__divider col-12 col-lg-6">
+                     <label for="first-name" class="form__label">First Name <span class="highlight highlight--important notranslate">*</span></label>
+                     <input type="text" name="first-name" class="form__input" id="first-name" placeholder="First Name" maxlength="25" required>
+                  </div>
+                  <div class="form__divider form__divider--right col-12 col-lg-6">
+                     <label for="last-name" class="form__label">Last Name <span class="highlight highlight--important notranslate">*</span></label>
+                     <input type="text" name="last-name" class="form__input" id="last-name" placeholder="Last Name" maxlength="25" required>
+                  </div>
+                  <div class="col-12">
+                     <label for="company-name" class="form__label">Company</label>
+                     <input type="text" name="company-name" class="form__input" id="company-name" placeholder="Company Name" maxlength="25" required>
+                  </div>
+                  <div class="form__section col-12">
+                     <label for="email" class="form__label">Email Address <span class="highlight highlight--important notranslate">*</span></label>
+                     <input type="email" name="email" class="form__input" id="review-email" placeholder="Type your email addreess here." required>
+
+                     <label for="message" class="form__label">Message <span class="highlight highlight--important notranslate">*</span> <span class="form-input-info">Max 500 charaters. </span></label>
+                     <textarea name="message" class="form__text-area" id="message" rows="10" placeholder="Please let me know what you wish to dicuss." maxlength="500" required></textarea>
+                     <input type="submit" class="cta cta--prim form__submit" id="review-submit" value="Send" aria-label="submit-review button">
+                  </div>
+               </div>
+           </form>
+         </div>
+      </div>
+   </section>
+{% endblock %}
