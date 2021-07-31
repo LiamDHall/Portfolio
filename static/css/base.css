@@ -16,6 +16,7 @@
     --orange: rgb(228, 83, 0);
     --black: black;
 
+    --f-xs: 0.6rem;
     --f-sm: 0.8rem;
     --f-p: 1rem;
     --f-tag: 1.5rem;
@@ -46,7 +47,7 @@ and not max-width.
     .navbar-expand-custom .navbar-collapse {
         display: flex!important;
     }
-    .navbar-expand-custom .navbar-toggler {
+    .navbar-expand-custom .navbar-tog-btn {
         display: none;
     }
 }
@@ -94,6 +95,18 @@ ul {
 
 .container {
     max-width: 1100px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 19;
+    display: none;
 }
 
 @media screen and (max-width: 1025px) {
@@ -167,13 +180,18 @@ small {
     clear: both;
 }
 
-.mobile-only {
+.m-block,
+.m-inline-block {
     display: none;
 }
 
 @media screen and (max-width: 1025px) {
-    .mobile-only {
+    .m-block {
         display: block;
+    }
+
+    .m-inline-block {
+        display: inline-block;
     }
 }
 
@@ -329,7 +347,7 @@ button:focus {
     font-size: var(--f-info);
 }
 
-.navbar-toggler {
+.navbar-tog-btn {
     color: inherit;
     font-size: var(--f-info);
 }
@@ -382,6 +400,10 @@ button:focus {
 
 /*------------------------------------------------------Site Header Mobile & Responsive--*/
 @media screen and (max-width: 1025px) {
+    .overlay-active {
+        display: block !important;
+    }
+
     .logo {
         flex-grow: 1;
     }
@@ -391,14 +413,28 @@ button:focus {
         flex-grow: 0;
     }
 
+    .navbar-expand-custom>.active {
+        display: block!important;
+    }
+
     .navbar-collapse {
+        padding-top: 10px;
         position: absolute;
-        top: 105px;
-        left:0;
-        width: 100%;
+        top: 0;
+        right:0;
+        width: 80%;
         text-align: center;
         background: white;
         z-index: 20;
+        height: 100vh;
+        color: var(--navy);
+    }
+
+    .close-nav {
+        position: relative;
+        right: 0;
+        margin: 20px;
+        font-size: var(--f-title);
     }
 
     .navbar-collapse li{
@@ -439,7 +475,7 @@ button:focus {
         display: none;
     }
 
-    .navbar-toggler {
+    .navbar-tog-btn {
         padding-right: 0;
     }
 
@@ -470,7 +506,7 @@ button:focus {
 
 @media screen and (max-width: 435px) {
     .logo {
-        margin-right: 15px;
+        margin-right: 5px;
     }
 
     .search {
@@ -484,9 +520,17 @@ button:focus {
 }
 
 @media screen and (max-width: 375px) {
-    .navbar-collapse {
-        top: 100px;
+    .logo__tagline {
+        font-size: var(--f-sm);
     }
+
+}
+
+@media screen and (max-width: 300px) {
+    .logo__tagline {
+        font-size: var(--f-xs);
+    }
+
 }
 
 /*------------------------------------------------------Hero--*/

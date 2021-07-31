@@ -5,3 +5,8 @@ $('.project-tab-btn').on('click', function(){
     var tab = `.${$(this).val()}`
     $(this).parent().parent().siblings(tab).removeClass('d-none')
 });
+
+$('.navbar-toggler').on('click', function () {
+    $('#navbar').toggleClass('active');
+    $('#overlay').toggleClass('overlay-active');
+});

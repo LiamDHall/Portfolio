@@ -41,38 +41,41 @@
             <!--logo-->
             <a class="logo flex-item flex-largest" href="#">
                 <span class="title-font mr-2">LIAM HALL</span>
-                Full Stack Developer
+                <span class="logo__tagline">Full Stack Developer</span>
             </a>
             <!--Bootstrap Collapsible Menu-->
             <div class="navbar-expand-custom flex-item">
                 
                 <!--Mobile Nav Collapse Button-->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-tog-btn navbar-toggler" type="button" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 
                 <!--Site Nav-->
                 <div id="navbar" class="navbar-collapse collapse">
+                    <div class="m-block text-right">
+                        <button class="close-nav navbar-toggler" type="button"><i class="fas fa-times" aria-label="close navbar"></i></button>
+                    </div>
+                    <h2 class="m-block title-font m-2">Liam Hall</h2>
+                    <p class="m-block">Full-Stack Developer</p>
                     <ul class="site-header__navbar navbar-nav">
-                        <li class="mobile-only">
-                           <button class="nav-item" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-times"></i> Close</button>
+                        <li>
+                           <a class="nav-item navbar-toggler" href="#projects">Projects</a>
                         </li>
                         <li>
-                           <a class="nav-item" href="#projects">Projects</a>
+                           <a class="nav-item navbar-toggler" href="#about">About</a>
                         </li>
                         <li>
-                           <a class="nav-item" href="#about">About</a>
+                            <a class="nav-item navbar-toggler" href="./static/documents/cv_liam_d_hall.pdf" target="_blank">CV</a>
                         </li>
                         <li>
-                            <a class="nav-item" href="./static/documents/cv_liam_d_hall.pdf" target="_blank">CV</a>
-                        </li>
-                        <li>
-                           <a class="nav-item" href="#contact">Contact</a>
+                           <a class="nav-item navbar-toggler" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div id="overlay"></div>
     </header>
 
     <!--Main Page Content-->
@@ -84,7 +87,7 @@
         {% endblock %}
     </main>
     <!--Post Load JS-->
-    <script src="/static/scripts/tab-toggle.js"></script>
+    <script src="/static/scripts/toggles.js"></script>
     <script src="/static/scripts/hero-bubbles.js"></script>
     {% block add_postload_js %}
     {% endblock %}
