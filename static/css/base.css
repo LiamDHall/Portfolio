@@ -21,6 +21,7 @@
     --f-tag: 1.5rem;
     --f-info: 2rem;
     --f-title: 2.5rem;
+    --f-md-title: 3rem;
     --f-lg-title: 6rem;
 }
 
@@ -216,7 +217,7 @@ button:focus {
 
 .cta--hero {
     margin-top: 10px;
-    font-size: var(--f-title);
+    font-size: var(--f-info);
     font-weight: 300;
     border: none;
 }
@@ -512,6 +513,10 @@ button:focus {
     text-align: center;
 }
 
+.hero__list li {
+    display: inline-block;
+} 
+
 .hero__title {
     font-weight: 700 !important;
     font-size: var(--f-lg-title);
@@ -529,23 +534,15 @@ button:focus {
 }
 
 /*------------------------------------------------------Hero Responsive & Mobile--*/
-@media screen and (max-width: 475px) {
-    .hero__inner--left {
-        left: 0;
-    }
-
-    .hero__inner--right {
-        right: 0;
+@media screen and (max-width: 768px) {
+    .hero__list li {
+        display: block;
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 576px) {
     .hero__title {
-        font-size: var(--f-tag);
-    }
-
-    .hero__inner--right {
-        right: 0;
+        font-size: var(--f-md-title);
     }
 }
 /*------------------------------------------------------Section--*/
