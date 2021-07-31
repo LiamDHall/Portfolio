@@ -16,11 +16,12 @@
     --orange: rgb(228, 83, 0);
     --black: black;
 
-    --f-sm: 14px;
-    --f-md: 16px;
-    --f-lg: 18px;
-    --f-xl: 20px;
-    --f-xxl: 22px;
+    --f-sm: 0.8rem;
+    --f-p: 1rem;
+    --f-tag: 1.5rem;
+    --f-info: 2rem;
+    --f-title: 2.5rem;
+    --f-lg-title: 6rem;
 }
 
 /* 
@@ -60,7 +61,7 @@ body {
     margin: 0;
     color:#000000;
     background: var(--navy);
-    font-size: 1rem;
+    font-size: var(--f-p);
     top: 0 !important;
     height: 100%;
 }
@@ -122,14 +123,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 small {
-    font-size: 0.875rem;
+    font-size: var(--f-sm);
 }
 
-.font-size-1 {
-    font-size: 1rem;
-}
-
-.orbit {
+.title-font {
     font-family: 'Norwester', sans-serif;
 }
 
@@ -187,7 +184,7 @@ button:focus {
 
 .cta {
     display: inline-block;
-    font-size: 1rem;
+    font-size: var(--f-p);
     font-weight: 700;
     padding: 9px 20px;
     border-width: 0px;
@@ -219,7 +216,7 @@ button:focus {
 
 .cta--hero {
     margin-top: 10px;
-    font-size: 3rem;
+    font-size: var(--f-title);
     font-weight: 300;
     border: none;
 }
@@ -248,7 +245,7 @@ button:focus {
 
 .title {
     font-family: 'Norwester', sans-serif;
-    font-size: 40px;
+    font-size: var(--f-title);
 }
 
 /*------------------------------------------------------Form--*/
@@ -328,12 +325,12 @@ button:focus {
 }
 
 .site-header__icon {
-    font-size: 2rem;
+    font-size: var(--f-info);
 }
 
 .navbar-toggler {
     color: inherit;
-    font-size: 2rem;
+    font-size: var(--f-info);
 }
 
 .site-header__navbar > li {
@@ -369,7 +366,7 @@ button:focus {
 /*--Messages Mobile & Responsive--*/
 @media screen and (max-width: 1025px) {
     .cta--icon {
-        font-size: 2rem;
+        font-size: var(--f-info);
     }
 }
 
@@ -413,7 +410,7 @@ button:focus {
         padding: 10px 0;
         background-color: white;
         color: black;
-        font-size: 1rem;
+        font-size: var(--f-p);
         border: 0;
         border-bottom: 2px solid var(--primary-cta);
         font-weight: 700;
@@ -486,10 +483,6 @@ button:focus {
 }
 
 @media screen and (max-width: 375px) {
-    .info-banner__text {
-        font-size: 0.8rem;
-    }
-
     .navbar-collapse {
         top: 100px;
     }
@@ -521,13 +514,13 @@ button:focus {
 
 .hero__title {
     font-weight: 700 !important;
-    font-size: 6rem;
+    font-size: var(--f-lg-title);
     color: white;
 }
 
 .hero__tagline {
     font-weight: 300;
-    font-size: 2rem;
+    font-size: var(--f-tag);
 }
 
 #hero-bubbles {
@@ -548,7 +541,7 @@ button:focus {
 
 @media screen and (max-width: 375px) {
     .hero__title {
-        font-size: 2rem;
+        font-size: var(--f-tag);
     }
 
     .hero__inner--right {

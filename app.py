@@ -3,7 +3,6 @@ from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_mail import Mail, Message
 
-
 app = Flask(__name__)
 
 app.secret_key = os.environ.get("SECRET_KEY")
