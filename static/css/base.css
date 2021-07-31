@@ -117,17 +117,7 @@ ul {
 
 /*--Highlight--*/
 .highlight {
-    color: white;
-}
-
-.info-highlight {
-    color: var(--primary-cta);
-    font-weight: 700;
-}
-
-.add-highlight {
-    color: limegreen;
-    font-weight: 700;
+    color: red;
 }
 
 /*--Text--*/
@@ -306,6 +296,7 @@ button:focus {
     border: 0px;
     border-radius: 5px;
     padding: 15px;
+    background-color: #ececec;
 }
 
 .form__submit {
@@ -318,6 +309,25 @@ button:focus {
 
 .form__submit {
     width: 100%;
+}
+
+@media screen and (max-width: 1025px) {
+    .form__row {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .form__divider:nth-child(2) {
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .form-input-info {
+        display: block;
+        float: none;
+    }
 }
 
 /*------------------------------------------------------Site Header--*/
@@ -658,8 +668,11 @@ button:focus {
 .contact {
     background-color: white;
     color: #03032a;
+    padding: 15px;
 }
 
 .title-contact {
     text-align: center;
 }
+
+/*------------------------------------------------------Contact Responsive & Mobile--*/

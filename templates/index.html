@@ -449,17 +449,17 @@
       <h2 class="title title-contact title-font">Contact</h2>
       <p class="text-center">Let Build Something Great, Togther!</p>
       <p class="text-center">To discuss working together please fill in the form below.</p>
-      <p class="text-center">All fields with a <span class="highlight highlight--important notranslate">*</span> are required.</p>
+      <p class="text-center">All fields with a <span class="highlight">*</span> are required.</p>
       <div class="row">
          <div class="col-12">
             <form id="contact-form" action="{{ url_for('home') }}" method="POST">
                <div class="form__row row">
                   <div class="form__divider col-12 col-lg-6">
-                     <label for="first-name" class="form__label">First Name <span class="highlight highlight--important notranslate">*</span></label>
+                     <label for="first-name" class="form__label">First Name <span class="highlight">*</span></label>
                      <input type="text" name="first-name" class="form__input" id="first-name" placeholder="First Name" maxlength="25" required>
                   </div>
                   <div class="form__divider form__divider--right col-12 col-lg-6">
-                     <label for="last-name" class="form__label">Last Name <span class="highlight highlight--important notranslate">*</span></label>
+                     <label for="last-name" class="form__label">Last Name <span class="highlight">*</span></label>
                      <input type="text" name="last-name" class="form__input" id="last-name" placeholder="Last Name" maxlength="25" required>
                   </div>
                   <div class="col-12">
@@ -467,12 +467,12 @@
                      <input type="text" name="company-name" class="form__input" id="company-name" placeholder="Company Name" maxlength="25">
                   </div>
                   <div class="form__section col-12">
-                     <label for="email" class="form__label">Email Address <span class="highlight highlight--important notranslate">*</span></label>
+                     <label for="email" class="form__label">Email Address <span class="highlight">*</span></label>
                      <input type="email" name="email" class="form__input" id="review-email" placeholder="Type your email addreess here." required>
 
-                     <label for="message" class="form__label">Message <span class="highlight highlight--important notranslate">*</span> <span class="form-input-info">Max 500 charaters. </span></label>
+                     <label for="message" class="form__label">Message <span class="highlight">*</span> <span class="form-input-info">Max 500 charaters. </span></label>
                      <textarea name="message" class="form__text-area" id="message" rows="10" placeholder="Please let me know what you wish to dicuss." maxlength="500" required></textarea>
-                     <input type="submit" class="cta cta--prim form__submit" id="review-submit" value="Send" aria-label="submit-review button">
+                     <input type="submit" class="cta cta--orange form__submit" id="review-submit" value="Send" aria-label="submit-review button">
                   </div>
                </div>
            </form>
