@@ -33,7 +33,7 @@ def home():
         else:
             company_name = request.form.get("company-name")
         sender_email = request.form.get("email")
-        message = request.form.get("message") 
+        message = request.form.get("message")
 
         context = {
             'first_name': first_name,
