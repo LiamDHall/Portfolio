@@ -196,10 +196,9 @@ button:focus {
     font-size: var(--f-p);
     font-weight: 700;
     padding: 9px 20px;
-    border-width: 0px;
     text-align: center;
     background: none;
-    border: 1px solid;
+    border: 2px solid;
 }
 
 .cta--prim {
@@ -216,6 +215,17 @@ button:focus {
 .cta--orange:hover {
     color: white;
     background-color: var(--orange);
+}
+
+.cta--navy {
+    color: white;
+    border-color: var(--navy);
+    background-color: var(--navy);
+}
+
+.cta--navy:hover {
+    color: white;
+    background-color: var(--navy);
 }
 
 .cta--third {
@@ -614,6 +624,63 @@ button:focus {
     color: white;
 }
 
+.about__container {
+    position: relative;
+    max-width: 2100px;
+    margin: 0 auto;
+}
+
+.about__text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 100px;
+}
+
+/*------------------------------------------------------About Responsive & Mobile--*/
+@media screen and (max-width: 1725px) {
+    .about__text {
+        position: static;
+        transform: translateY(0);
+    }
+
+    .about__img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .about__text {
+        position: static;
+        padding-right: 0px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about__img {
+        position: static;
+        transform: translateY(0);
+        padding-right: 0;
+        padding-top: 40px;
+        max-height: 500px;
+    }
+
+    .about__img-container {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .about__container {
+        padding: 0;
+    }
+}
+
+
+
 /*------------------------------------------------------Projects--*/
 .projects {
     background-color: var(--navy);
@@ -674,5 +741,3 @@ button:focus {
 .title-contact {
     text-align: center;
 }
-
-/*------------------------------------------------------Contact Responsive & Mobile--*/
