@@ -628,6 +628,7 @@ button:focus {
     position: relative;
     max-width: 2100px;
     margin: 0 auto;
+    padding: 0 24px;
 }
 
 .about__text {
@@ -816,6 +817,17 @@ button:focus {
     padding: 15px;
 }
 
+.contact>.row>.col-12 {
+    padding:0;
+}
+
 .title-contact {
     text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+    #contact-form .col-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
