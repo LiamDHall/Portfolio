@@ -691,6 +691,10 @@ button:focus {
     padding: 0 24px;
 }
 
+.projects .row {
+    margin-top: 60px;
+}
+
 .title--projects {
     color: var(--orange); 
 }
@@ -778,6 +782,13 @@ button:focus {
 }
 
 /*------------------------------------------------------Projects Responsive & Mobile--*/
+@media screen and (max-width: 768px) {
+    .project__cta {
+        display: block;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 625px) {
     .projects__list li{
         display: block;
@@ -796,9 +807,6 @@ button:focus {
 }
 
 @media screen and (max-width: 992px) {
-    .projects .row {
-        margin-top: 60px;
-    }
 
     .projects .row:first-of-type {
         margin-top: 40px;
