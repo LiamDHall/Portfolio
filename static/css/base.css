@@ -687,10 +687,11 @@ button:focus {
     color: white;
     max-width: 2100px;
     margin: 0 auto;
+    padding: 0 24px;
 }
 
 .title--projects {
-    color: var(--orange);
+    color: var(--orange); 
 }
 
 .projects__list {
@@ -729,6 +730,39 @@ button:focus {
     border-radius: 5px;
     border: 0px;
     margin-bottom: 15px;
+}
+
+/*------------------------------------------------------Projects Responsive & Mobile--*/
+@media screen and (max-width: 625px) {
+    .projects__list li{
+        display: block;
+        text-align: center;
+    }
+
+    .projects__list li button{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .projects {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .projects .row {
+        margin-top: 60px;
+    }
+
+    .projects .row:first-of-type {
+        margin-top: 40px;
+    }
+
+    .projects .col-lg-4 {
+        order: 1;
+        margin-top: 20px;
+    }
 }
 
 /*------------------------------------------------------Contact--*/
