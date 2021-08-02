@@ -2,11 +2,19 @@ import os
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_mail import Mail, Message
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
+# Mongo DB Constants
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
+mongo = PyMongo(app)
+
+# Email Settings
 mail_settings = {
     "MAIL_SERVER": "smtp.gmail.com",
     "MAIL_PORT": 465,
@@ -56,11 +64,16 @@ def home():
             subject=f"New Protfolio Message / {first_name}@{company_name}",
             sender=app.config.get("MAIL_USERNAME"),
             recipients=[app.config.get("MAIL_USERNAME")],
-            body=render_template('email/portfolio_contact.txt', context=context)
+            body=render_template(
+                'email/portfolio_contact.txt',
+                context=context
+            )
         )
         mail.send(msg)
+        
+    projects = list(mongo.db.projects.find())
 
-    return render_template("index.html")
+    return render_template("index.html", projects=projects)
 
 
 if __name__ == "__main__":
