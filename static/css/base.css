@@ -464,7 +464,7 @@ button:focus {
     .navbar-collapse .nav-item {
         display: inline-block;
         width: 100%;
-        padding: 10px 0;
+        padding: 15px 0;
         background-color: white;
         color: black;
         font-size: var(--f-p);
