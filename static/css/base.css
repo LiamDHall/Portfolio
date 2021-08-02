@@ -781,6 +781,10 @@ button:focus {
     display: flex;
 }
 
+.project-order {
+    order: 1;
+}
+
 /*------------------------------------------------------Projects Responsive & Mobile--*/
 @media screen and (max-width: 768px) {
     .project__cta {
@@ -813,8 +817,11 @@ button:focus {
     }
 
     .projects .col-lg-4 {
-        order: 1;
         margin-top: 20px;
+    }
+
+    .project-order {
+        order: 0;
     }
 }
 
