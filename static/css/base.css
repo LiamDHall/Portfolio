@@ -379,8 +379,7 @@ button:focus {
 .site-header__navbar .nav-item:hover,
 .site-header__navbar .nav-item:active,
 .site-header__navbar .active {
-    border-bottom: 3px solid;
-    border-color: var(--primary-cta);
+    border-bottom: 3px solid white;
 }
 
 /*--Messages--*/
@@ -475,7 +474,7 @@ button:focus {
 
     .navbar-collapse a:hover,
     .navbar-collapse .active {
-        background-color: var(--primary-cta);
+        background-color: var(--navy);
         color: white;
     }
 }

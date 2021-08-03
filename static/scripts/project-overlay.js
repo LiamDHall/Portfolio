@@ -8,10 +8,8 @@ $(window).resize(function() {
 
 function overlayResize() {
     overlayHeight = $('.card-img').height()
-    console.log(overlayHeight)
     overlayHeight = `${overlayHeight}px`
     $('.projects__img-overlay').height(overlayHeight)
-    console.log('i ran')
 }
 
 $( ".projects__image a" ).hover(

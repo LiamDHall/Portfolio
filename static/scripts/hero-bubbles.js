@@ -1,5 +1,5 @@
 // Creates the canvas on document ready.
-$( document ).ready(function() {
+$(document).ready(function() {
     heroCanvas.create();
 });
 
