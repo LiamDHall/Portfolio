@@ -18,7 +18,7 @@ function navIndicator() {
     var projectsPos = $('#projects').offset().top;
     var aboutPos = $('#about').offset().top;
     var contactPos = $('#contact').offset().top;
-    var scroll = $(window).scrollTop() + 0.55;
+    var scroll = $(window).scrollTop() + 1;
     $('.nav-item').removeClass('active');
 
     if(scroll >= aboutPos && scroll < projectsPos){

@@ -377,9 +377,12 @@ button:focus {
 }
 
 .site-header__navbar .nav-item:hover,
-.site-header__navbar .nav-item:active,
 .site-header__navbar .active {
     border-bottom: 3px solid white;
+}
+
+.site-header__navbar .nav-item:focus {
+    border-bottom: 0px;
 }
 
 /*--Messages--*/
