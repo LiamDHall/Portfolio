@@ -601,6 +601,12 @@ button:focus {
     .hero__list li {
         display: block;
     }
+
+    .cta--hero {
+        font-size: var(--f-tag);
+        width: 75%;
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 576px) {
