@@ -404,14 +404,6 @@ button:focus {
     border: none;
 }
 
-/*--Messages Mobile & Responsive--*/
-@media screen and (max-width: 1025px) {
-    .cta--icon {
-        font-size: var(--f-info);
-    }
-}
-
-
 /*------------------------------------------------------Site Header Mobile & Responsive--*/
 @media screen and (max-width: 1025px) {
     .overlay-active {
@@ -477,6 +469,10 @@ button:focus {
     .navbar-collapse .active {
         border-bottom: 3px solid white;
         border-top: 3px solid white;
+    }
+
+    .cta--icon {
+        font-size: var(--f-info);
     }
 }
 
