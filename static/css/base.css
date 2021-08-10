@@ -411,14 +411,6 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 576px) {
-    .toast--bag {
-        max-width: none;
-        left: 0;
-        right: 0;
-    }
-}
-
 
 /*------------------------------------------------------Site Header Mobile & Responsive--*/
 @media screen and (max-width: 1025px) {
@@ -479,6 +471,12 @@ button:focus {
     .navbar-collapse .active {
         background-color: var(--navy);
         color: white;
+        border-radius: 0;
+    }
+
+    .navbar-collapse .active {
+        border-bottom: 3px solid white;
+        border-top: 3px solid white;
     }
 }
 
