@@ -1,8 +1,3 @@
-// Creates the canvas on document ready.
-$(document).ready(function() {
-    heroCanvas.create();
-});
-
 // Variables, values are all percentage or multipler of the browser height or width to allow the animation to be responsive.
 var fullWidth = $('body').width();
 var fullHeight = $(window).height();
@@ -13,6 +8,12 @@ var totalFloorHeight = fullHeight - floorHeight - strokeWidth / 2;
 var obstacleHeight = fullHeight * 0.09;
 var moveSpeed = fullHeight / 56;
 
+// Creates the canvas on document ready.
+$(document).ready(function() {
+    heroCanvas.create();
+    $('.hero__bg').height(fullHeight);
+});
+
 // Resizes all the variables so the browser size can be cahnged without breaking the animation
 $(window).resize(function() {
     setTimeout(function() {resizeWindow();}, 100);
@@ -22,6 +23,7 @@ function resizeWindow() {
     fullWidth = $('body').width();
     fullHeight = $(window).height();
     $('#hero-bubbles').attr('width', fullWidth).attr('height', fullHeight)
+    $('.hero__bg').height(fullHeight);
     floorGlow.height = fullHeight * 0.2;
     floorGlow.width = fullWidth;
     floorGlow.y = fullHeight - fullHeight * 0.2;
