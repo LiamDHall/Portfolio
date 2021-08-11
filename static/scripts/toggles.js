@@ -6,7 +6,7 @@ $('.project-tab-btn').on('click', function(){
     $(this).parent().parent().siblings(tab).removeClass('d-none')
 });
 
-$('.navbar-toggler').on('click', function () {
+$('.sidebar-toggler').on('click', function () {
     $('#navbar').toggleClass('active');
     $('#overlay').toggleClass('overlay-active');
 });

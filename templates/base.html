@@ -39,7 +39,7 @@
         <nav class="site-header__nav flex-container">
 
             <!--logo-->
-            <a class="logo flex-item flex-largest" href="#">
+            <a class="logo flex-item flex-largest" href="#top-of-page">
                 <span class="title-font mr-2">LIAM HALL</span>
                 <span class="logo__tagline">Full Stack Developer</span>
             </a>
@@ -47,38 +47,41 @@
             <div class="navbar-expand-custom flex-item">
                 
                 <!--Mobile Nav Collapse Button-->
-                <button class="navbar-tog-btn navbar-toggler" type="button" aria-label="Toggle navigation">
+                <button class="navbar-tog-btn sidebar-toggler" type="button" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 
                 <!--Site Nav-->
                 <div id="navbar" class="navbar-collapse collapse">
                     <div class="m-block text-right">
-                        <button class="close-nav navbar-toggler" type="button"><i class="fas fa-times" aria-label="close navbar"></i></button>
+                        <button class="navbar-tog-btn navbar-close sidebar-toggler" type="button"><i class="fas fa-times" aria-label="close navbar"></i></button>
                     </div>
-                    <h2 class="m-block title-font m-2">Liam Hall</h2>
-                    <p class="m-block">Full-Stack Developer</p>
+                    <a class="sidebar-toggler" href="#top-of-page">
+                        <h2 class="m-block title-font m-2">Liam Hall</h2>
+                        <p class="m-block">Full-Stack Developer</p>
+                    </a>
+                    <hr class="navbar-line m-block mb-0">
                     <ul class="site-header__navbar navbar-nav">
                         <li>
-                           <a id="nav-about" class="nav-item navbar-toggler" href="#about">About</a>
+                           <a id="nav-about" class="nav-item sidebar-toggler" href="#about">About</a>
                         </li>
                         <li>
-                           <a id="nav-projects" class="nav-item navbar-toggler" href="#projects">Projects</a>
+                           <a id="nav-projects" class="nav-item sidebar-toggler" href="#projects">Projects</a>
                         </li>
                         <li>
-                            <a class="nav-item navbar-toggler" href="https://github.com/LiamDHall" target="_blank">GitHub <span class="m-inline-block ml-2"><i class="fas fa-external-link-alt"></i></span></a>
+                            <a class="nav-item sidebar-toggler" href="https://github.com/LiamDHall" target="_blank">GitHub <span class="m-inline-block ml-2"><i class="fas fa-external-link-alt"></i></span></a>
                         </li>
                         <li>
-                            <a class="nav-item navbar-toggler" href="./static/documents/cv_liam_d_hall.pdf" target="_blank">CV <span class="m-inline-block ml-2"><i class="fas fa-external-link-alt"></i></span></a>
+                            <a class="nav-item sidebar-toggler" href="./static/documents/cv_liam_d_hall.pdf" target="_blank">CV <span class="m-inline-block ml-2"><i class="fas fa-external-link-alt"></i></span></a>
                         </li>
                         <li>
-                           <a id="nav-contact" class="nav-item navbar-toggler" href="#contact">Contact</a>
+                           <a id="nav-contact" class="nav-item sidebar-toggler" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div id="overlay" class="navbar-toggler"></div>
+        <div id="overlay" class="sidebar-toggler"></div>
     </header>
 
     <!--Main Page Content-->
