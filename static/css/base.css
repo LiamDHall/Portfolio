@@ -1,10 +1,9 @@
 /*------------------------------------------------------Google Font--*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 @font-face {
     font-family: 'Norwester';
-    src: url('https://8080-purple-zebra-or8tkr9w.ws-eu11.gitpod.io/static/fonts/norwester-webfont.woff2') format('woff2'),
-         url('https://8080-purple-zebra-or8tkr9w.ws-eu11.gitpod.io/static/fonts/norwester-webfont.woff') format('woff');
+    src: url('https://liam-hall.herokuapp.com/static/fonts/norwester-webfont.woff2') format('woff2'),
+         url('https://liam-hall.herokuapp.com/static/fonts/norwester-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
