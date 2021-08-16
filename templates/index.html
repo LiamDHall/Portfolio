@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+   <!--Hero-->
    <section class="hero">
       <div class="hero__bg">
+         <!--Hero Text-->
          <div class="hero__inner">
             <h1 class="hero__title title-font"><strong>Liam Hall</strong></h1>
             <h1 class="hero__tagline"><strong>Full Stack Developer</strong></h1>
@@ -33,6 +35,7 @@
       <h2 class="title title--about title-font mb-5">It's All About Me</h2>
       <div class="about__container row">
          <div class="col-lg-6 col-12">
+            <!--About Text-->
             <div class="about__text">
                <h3>Hi I'm Liam.</h3>                  
                <h4>I am a Full Stack Developer based in the UK with a background in design.</h4>
@@ -56,6 +59,7 @@
                <a class="cta cta--navy" href="#contact">Work With Me</a>
             </div>
          </div>
+         <!--About Image-->
          <div class="col-lg-6 col-12 about__img-container">
             <img class="about__img" src="static/images/work _desk.svg" alt="work desk">
          </div>
@@ -96,6 +100,7 @@
                </ul>
                <hr class="projects__line mt-0">
                <div class="features project-tab">
+                  <!--{{ project.name|upper }} Features-->
                   <ul>
                      {% for feature in project.features %}
                      <li>
@@ -104,6 +109,7 @@
                      {% endfor %}
                   </ul>
                </div>
+               <!--{{ project.name|upper }} Languages-->
                <div class="languages project-tab d-none">
                   <ul class="list-unstyled">
                      {% if 'python' in project.languages|lower %}
@@ -128,6 +134,7 @@
                      {% endif %}
                   </ul>
                </div>
+               <!--{{ project.name|upper }} Framework & Libraries-->
                <div class="framework project-tab d-none">
                   <ul class="list-unstyled">
                      {% if project.framework_libraries.frame %}
@@ -148,6 +155,7 @@
                   </ul>
                </div>
                {% if project.database %}
+                  <!--{{ project.name|upper }} Database-->
                   <div class="database project-tab d-none">
                      <ul class="list-unstyled">
                         {% if project.database.sql %}
@@ -169,6 +177,7 @@
                   </div>
                {% endif %}
                <hr>
+               <!--{{ project.name|upper }} Links-->
                <a class="project__cta cta cta--orange mb-2" href="{{ project.link }}" target="_blank">
                   View Site <i class="fas fa-external-link-alt"></i>
                </a>
@@ -176,6 +185,7 @@
                   <i class="fab fa-github"></i> Github
                </a>
             </div>
+            <!--{{ project.name|upper }} Image-->
             <div class="projects__image col-12 col-lg-4">
                <a href="{{ project.link }}" target="_blank">
                   <img class="card-img" src="static/images/{{ project.name|lower }}_desktop_low_res.jpg">
