@@ -29,51 +29,67 @@ mail = Mail(app)
 
 
 @app.route("/", methods=["GET", "POST"])
-@app.route("/home", methods=["GET", "POST"])
 def home():
-
+    if session.get("formIDNo") is None:
+        session['formIDNo'] = 'nothing'
+    # POST contact form if form id no dont match
     if request.method == "POST":
-        first_name = request.form.get("first-name")
-        last_name = request.form.get("last-name")
-        if request.form.get("company-name") == "":
-            company_name = "No company name given"
-        else:
-            company_name = request.form.get("company-name")
-        sender_email = request.form.get("email")
-        message = request.form.get("message")
+        form_id_no = request.form.get("form-id-no")
 
-        context = {
-            'first_name': first_name,
-            'last_name': last_name,
-            'company_name': company_name,
-            'sender_email': sender_email,
-            'message': message,
-        }
+        # Stops same form resubmission
+        if form_id_no != session["formIDNo"]:
+            # Get form info
+            first_name = request.form.get("first-name")
+            last_name = request.form.get("last-name")
+            if request.form.get("company-name") == "":
+                company_name = "No company name given"
+            else:
+                company_name = request.form.get("company-name")
+            sender_email = request.form.get("email")
+            message = request.form.get("message")
 
-        # Send confirmation email to sender
-        msg = Message(
-            subject="Contact Confirmation - Liam Hall Full-Stack Developer",
-            sender=app.config.get("MAIL_USERNAME"),
-            recipients=[sender_email],
-            body=render_template('email/contact_confirm.txt', context=context)
-        )
-        mail.send(msg)
+            context = {
+                "first_name": first_name,
+                "last_name": last_name,
+                "company_name": company_name,
+                "sender_email": sender_email,
+                "message": message,
+            }
 
-        # Send contact form to myself
-        msg = Message(
-            subject=f"New Protfolio Message / {first_name}@{company_name}",
-            sender=app.config.get("MAIL_USERNAME"),
-            recipients=[app.config.get("MAIL_USERNAME")],
-            body=render_template(
-                'email/portfolio_contact.txt',
-                context=context
+            # Send confirmation email to sender
+            msg = Message(
+                subject="Contact Confirmation - Liam Hall Full-Stack Developer",
+                sender=app.config.get("MAIL_USERNAME"),
+                recipients=[sender_email],
+                body=render_template(
+                    "email/contact_confirm.txt",
+                    context=context
+                )
             )
-        )
-        mail.send(msg)
-        
+            mail.send(msg)
+
+            # Send contact form to myself
+            msg = Message(
+                subject=f"New Protfolio Message / {first_name}@{company_name}",
+                sender=app.config.get("MAIL_USERNAME"),
+                recipients=[app.config.get("MAIL_USERNAME")],
+                body=render_template(
+                    "email/portfolio_contact.txt",
+                    context=context
+                )
+            )
+            mail.send(msg)
+
+            # Set session form vars
+            session["formIDNo"] = form_id_no
+            session["formSubmitted"] = True
+
     projects = list(mongo.db.projects.find())
 
-    return render_template("index.html", projects=projects)
+    return render_template(
+        "index.html",
+        projects=projects,
+    )
 
 
 if __name__ == "__main__":

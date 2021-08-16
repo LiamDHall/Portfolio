@@ -13,6 +13,7 @@
 :root {
     --navy: #071120;
     --orange: rgb(228, 83, 0);
+    --green: #238636;
     --black: black;
 
     --f-xs: 0.6rem;
@@ -239,14 +240,20 @@ button:focus {
     border: none;
 }
 
-.cta--github {
-    color: white;
-    border-color: #238636;
+.cta--green {
+    color: var(--green);
+    border-color: var(--green);
 }
 
+.cta--github {
+    color: white;
+    border-color: var(--green);
+}
+
+.cta--green,
 .cta--github:hover {
     color: white;
-    background-color: #238636;
+    background-color: var(--green);
 }
 
 .cta--icon {
@@ -318,6 +325,30 @@ button:focus {
 
 .form__submit {
     width: 100%;
+}
+
+.form__success-feedback {
+    color: var(--green)
+}
+
+#form__error-info,
+.form__error {
+    color: red;
+}
+
+.form__error {
+    display: block;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: var(--f-p);
+}
+
+.success {
+    border: 1px solid limegreen;
+}
+
+.error {
+    border: 1px solid red;
 }
 
 @media screen and (max-width: 1025px) {

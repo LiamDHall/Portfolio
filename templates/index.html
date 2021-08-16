@@ -196,35 +196,55 @@
    <a id="contact" class="section-link"></a>
    <section class="contact py-5">
       <h2 class="title title-contact title-font">Contact</h2>
-      <p class="text-center">If you dream it, we can build it!</p>
-      <p class="text-center">To discuss working together please fill in the form below.</p>
-      <p class="text-center">All fields with a <span class="highlight">*</span> are required.</p>
+      <div class="contact-header text-center {% if session.formSubmitted == True %}d-none{% endif %}">
+         <p class="text-center">If you dream it, we can build it!</p>
+         <p class="text-center">To discuss working together please fill in the form below.</p>
+         <p id="form__error-info" class="text-center font-weight-bold"></p>
+         <p class="text-center">All fields with a <span class="highlight">*</span> are required.</p>
+      </div>
       <div class="row">
          <div class="col-12">
-            <form id="contact-form" action="{{ url_for('home') }}" method="POST">
+
+            <!--Contact Form-->
+            <form id="contact-form" class="{% if session.formSubmitted == True %}d-none{% endif %}" action="{{ url_for('home') }}" method="POST" novalidate>
                <div class="form__row row">
-                  <div class="form__divider col-12 col-lg-6">
+                  <div class="form-field form__divider col-12 col-lg-6">
                      <label for="first-name" class="form__label">First Name <span class="highlight">*</span></label>
                      <input type="text" name="first-name" class="form__input" id="first-name" placeholder="First Name" maxlength="25" required>
+                     <small class="form__error"></small>
                   </div>
-                  <div class="form__divider form__divider--right col-12 col-lg-6">
+                  <div class="form-field form__divider form__divider--right col-12 col-lg-6">
                      <label for="last-name" class="form__label">Last Name <span class="highlight">*</span></label>
                      <input type="text" name="last-name" class="form__input" id="last-name" placeholder="Last Name" maxlength="25" required>
+                     <small class="form__error"></small>
                   </div>
-                  <div class="col-12">
+                  <div class="form-field col-12">
                      <label for="company-name" class="form__label">Company</label>
-                     <input type="text" name="company-name" class="form__input" id="company-name" placeholder="Company Name" maxlength="25">
+                     <input type="text" name="company-name" class="form__input" id="company-name" placeholder="Company Name" maxlength="50">
+                     <small class="form__error"></small>
                   </div>
-                  <div class="form__section col-12">
+                  <div class="form-field form__section col-12">
                      <label for="email" class="form__label">Email Address <span class="highlight">*</span></label>
-                     <input type="email" name="email" class="form__input" id="review-email" placeholder="Type your email address here." required>
-
-                     <label for="message" class="form__label">Message <span class="highlight">*</span> <span class="form-input-info">Max 500 characters. </span></label>
-                     <textarea name="message" class="form__text-area" id="message" rows="10" placeholder="Please let me know what you wish to discuss." maxlength="500" required></textarea>
-                     <input type="submit" class="cta cta--orange form__submit" id="review-submit" value="Send" aria-label="submit-review button">
+                     <input type="email" name="email" class="form__input" id="email" placeholder="Type your email address here." required>
+                     <small class="form__error"></small>
                   </div>
+                  <div class="form-field col-12">
+                     <label for="message" class="form__label">Message <span class="highlight">*</span> <span class="form-input-info">Max 750 characters. </span></label>
+                     <textarea name="message" class="form__text-area" id="message" rows="10" placeholder="Please let me know what you wish to discuss." maxlength="750" required></textarea>
+                     <small class="form__error"></small>
+                  </div>
+                  <input type="submit" class="cta cta--orange form__submit mx-3" id="review-submit" value="Send" aria-label="submit-review button">
+                  <input type="hidden" name="form-id-no" value="{{ range(1, 10000000) | random }}">
                </div>
-           </form>
+            </form>
+            
+               <!--Contact Form Submission Feedback-->
+               <div class="form__success-feedback {% if session.formSubmitted != True %}d-none{% endif %} text-center">
+                  <p>Thank you for contacting me! I normally reply within 48 hours.</p>
+                  <p>You should recieve a confirmation email in a few minutes.</p>
+                  <p>If you have not recieved an email please contact me directly at: <strong>hall.d.liam@gmail.com</strong></p>
+                  <button id="form-toggle" class="cta cta--green" type="button">Send Another Message</button>
+               </div>
          </div>
       </div>
    </section>

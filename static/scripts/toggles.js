@@ -10,3 +10,9 @@ $('.sidebar-toggler').on('click', function () {
     $('#navbar').toggleClass('active');
     $('#overlay').toggleClass('overlay-active');
 });
+
+$('#form-toggle').on('click', function () {
+    $('#contact-form').removeClass('d-none');
+    $('.contact-header').removeClass('d-none');
+    $('.form__success-feedback').addClass('d-none');
+});
