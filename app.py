@@ -31,7 +31,7 @@ mail = Mail(app)
 def home():
     """ Renders index page and handles form submissions.
     It also retrieves my projects from the database to be
-    rendered. 
+    rendered.
     """
     if session.get("formIDNo") is None:
         session['formIDNo'] = 'nothing'
@@ -97,17 +97,19 @@ def home():
     )
 
 
-# 404 Error Handler Page Not Found
 @app.errorhandler(404)
 def page_not_found(e):
-    # note that we set the 404 status explicitly
+    """404 Error Handler Page Not Found.
+    Note that the 404 status explicitly
+    """
 
     return render_template('404.html'), 404
 
 
-# General Error Handler
 @app.errorhandler(Exception)
 def handle_exception(e):
+    """General Error Handler
+    """
     # pass through HTTP errors
     if isinstance(e, HTTPException):
         return e
