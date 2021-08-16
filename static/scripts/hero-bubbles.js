@@ -10,8 +10,10 @@ var moveSpeed = fullHeight / 56;
 
 // Creates the canvas on document ready.
 $(document).ready(function() {
-    heroCanvas.create();
-    $('.hero__bg').height(fullHeight);
+    if($(".hero").length) {
+        heroCanvas.create();
+        $('.hero__bg').height(fullHeight);
+    }
 });
 
 // Resizes all the variables so the browser size can be cahnged without breaking the animation
