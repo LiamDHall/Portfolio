@@ -1,9 +1,7 @@
 import os
-from flask import (
-    Flask, flash, render_template, redirect, request, session, url_for)
+from flask import (Flask, render_template, request, session)
 from flask_mail import Mail, Message
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
@@ -31,15 +29,19 @@ mail = Mail(app)
 
 @app.route("/", methods=["GET", "POST"])
 def home():
+    """ Renders index page and handles form submissions.
+    It also retrieves my projects from the database to be
+    rendered. 
+    """
     if session.get("formIDNo") is None:
         session['formIDNo'] = 'nothing'
     # POST contact form if form id no dont match
     if request.method == "POST":
         form_id_no = request.form.get("form-id-no")
 
-        # Stops same form resubmission
+        # Stops same form resubmitting
         if form_id_no != session["formIDNo"]:
-            # Get form info
+            # Get form data
             first_name = request.form.get("first-name")
             last_name = request.form.get("last-name")
             if request.form.get("company-name") == "":
@@ -49,6 +51,7 @@ def home():
             sender_email = request.form.get("email")
             message = request.form.get("message")
 
+            # Set page context with form data
             context = {
                 "first_name": first_name,
                 "last_name": last_name,
@@ -85,6 +88,7 @@ def home():
             session["formIDNo"] = form_id_no
             session["formSubmitted"] = True
 
+    # Get my projects form database
     projects = list(mongo.db.projects.find())
 
     return render_template(
@@ -93,7 +97,7 @@ def home():
     )
 
 
-# Error Handler 404 Page Not Found
+# 404 Error Handler Page Not Found
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
@@ -101,6 +105,7 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 
+# General Error Handler
 @app.errorhandler(Exception)
 def handle_exception(e):
     # pass through HTTP errors
@@ -114,4 +119,4 @@ def handle_exception(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
