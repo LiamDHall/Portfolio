@@ -11,6 +11,7 @@ function scrollToY() {
     }
 }
 
+// Sets the current scroll position before loading
 window.addEventListener('beforeunload', function () {
     sessionStorage.setItem('scrollpos', window.scrollY);
 });

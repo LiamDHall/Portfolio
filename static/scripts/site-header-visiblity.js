@@ -1,6 +1,4 @@
-/* 
-When scroll position is 0 hide the site header
-*/
+// When scroll position is 0 hide the site header overwise show it
 $(document).ready(function() {
     siteHeaderVis()
 });

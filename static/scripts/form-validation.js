@@ -1,3 +1,4 @@
+// Form validation
 const firstNameIn = document.getElementById('first-name');
 const lastNameIn = document.getElementById('last-name');
 const companyNameIn = document.getElementById('company-name');
@@ -6,49 +7,82 @@ const messageIn = document.getElementById('message');
 
 const form = document.getElementById('#contact-form');
 
+$('#contact-form').submit(function(e){
+    var contactPosY = $('#contact').offset().top;
+    window.scrollTo(0, contactPosY);
 
+    // Validate fields
+    var isFirstNameValid = checkName(firstNameIn),
+        isLastNameValid = checkName(lastNameIn),
+        isEmailValid = checkEmail(),
+        isMessageValid = checkMessage();
+
+    var isFormValid = isFirstNameValid &&
+        isLastNameValid &&
+        isEmailValid &&
+        isMessageValid;
+
+    // Prevent the form from submitting if errors and scroll to top of form
+    if (!isFormValid) {
+        e.preventDefault();
+        $('#form__error-info').html('Error: Please check your inputs below.')
+    }
+});
+
+// Check Names Inputs are Valid
 const checkName = (input) => {
-    let valid = false;
+    var valid = false;
 
     const min = 1,
         max = 25;
 
     const inputTrim = input.value.trim();
 
+    // Check if input isn't blank
     if (!isRequired(inputTrim)) {
-        showError(input, 'Feild cannot be blank.');
-    } else if (!isBetween(inputTrim.length, min, max)) {
+        showError(input, 'Feild cannot be blank.'); 
+    } 
+    // Check if input isnt too long or short
+    else if (!isBetween(inputTrim.length, min, max)) {
         showError(input, `Feild must be between ${min} and ${max} characters.`)
-    } else {
+    } 
+    
+    else {
         showSuccess(input);
         valid = true;
     }
     return valid;
 };
 
+// Check Message Inputs is valid
 const checkMessage = () => {
 
-    let valid = false;
+    var valid = false;
 
     const min = 1,
         max = 750;
 
     const messageTrim = messageIn.value.trim();
 
+    // Check if input isn't blank
     if (!isRequired(messageTrim)) {
         showError(messageIn, 'Feild cannot be blank.');
-    } else if (!isBetween(messageTrim.length, min, max)) {
+    } 
+    // Check if input isnt too long or short
+    else if (!isBetween(messageTrim.length, min, max)) {
         showError(messageIn, `Feild must be between ${min} and ${max} characters.`)
-    } else {
+    }
+    
+    else {
         showSuccess(messageIn);
         valid = true;
     }
     return valid;
 };
 
-
+// Check Email is in a valid format and is present
 const checkEmail = () => {
-    let valid = false;
+    var valid = false;
     const email = emailIn.value.trim();
     if (!isRequired(email)) {
         showError(emailIn, 'Email cannot be blank.');
@@ -100,29 +134,6 @@ const showSuccess = (input) => {
     const error = formField.querySelector('small');
     error.textContent = '';
 }
-
-
-$('#contact-form').submit(function(e){
-    var contactPosY = $('#contact').offset().top;
-    window.scrollTo(0, contactPosY);
-
-    // Validate fields
-    var isFirstNameValid = checkName(firstNameIn),
-        isLastNameValid = checkName(lastNameIn),
-        isEmailValid = checkEmail(),
-        isMessageValid = checkMessage();
-
-    var isFormValid = isFirstNameValid &&
-        isLastNameValid &&
-        isEmailValid &&
-        isMessageValid;
-
-    // Prevent the form from submitting if errors and scroll to top of form
-    if (!isFormValid) {
-        e.preventDefault();
-        $('#form__error-info').html('Error: Please check your inputs below.')
-    }
-});
 
 function addChangeListener(input) {
     var id = `#${input.id}`

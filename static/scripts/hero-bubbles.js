@@ -1,12 +1,6 @@
 // Variables, values are all percentage or multipler of the browser height or width to allow the animation to be responsive.
 var fullWidth = $('body').width();
 var fullHeight = $(window).height();
-var strokeWidth = fullHeight * 0.02;
-var objectSize = fullHeight * 0.0605; // Triange, others are scaled based off it
-var floorHeight = fullHeight * 0.1;
-var totalFloorHeight = fullHeight - floorHeight - strokeWidth / 2;
-var obstacleHeight = fullHeight * 0.09;
-var moveSpeed = fullHeight / 56;
 
 // Creates the canvas on document ready.
 $(document).ready(function() {
@@ -64,13 +58,13 @@ var heroCanvas = {
     },
 
     // ANIMATION LOOP START
-    // UpdateS the canvas each time it runs
+    // Updates the canvas each time it runs
     loop: function(timestamp) {
         if(loopState == 1) {                        // Allows the animation to be pause as the animation only runs in state 1
             requestAnimationFrame(heroCanvas.loop); // Re calls this fuction to complete the loop (calling this.loop doesn't work)
         }
 
-
+        // Delta Time for smoother animation makes it more consistent across devices
         deltaTime = (timestamp - lastTimestamp) / perfectFrameTime;
         lastTimestamp = timestamp;
 
@@ -93,7 +87,7 @@ var heroCanvas = {
             bubbleArray[i].physics()               
             bubbleArray[i].removeFaded()                 
         }
-        loopCounter += 1;                           // Add 1 to the amount of time the loop has been run used for map render and background title creator
+        loopCounter += 1;                           // Add 1 to the amount of time the loop has been run used to know when to create new bubbles
     },
     // ANIMATION LOOP END
 };

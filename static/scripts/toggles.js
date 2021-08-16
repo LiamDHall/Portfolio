@@ -1,3 +1,4 @@
+// Toggle project info tabs and pages
 $('.project-tab-btn').on('click', function(){
     $(this).parent().siblings('li').children('.project-tab-btn').removeClass('active')
     $(this).addClass('active')
@@ -6,11 +7,13 @@ $('.project-tab-btn').on('click', function(){
     $(this).parent().parent().siblings(tab).removeClass('d-none')
 });
 
+// Toggle mobile sidebar nav and its overlay
 $('.sidebar-toggler').on('click', function () {
     $('#navbar').toggleClass('active');
     $('#overlay').toggleClass('overlay-active');
 });
 
+// Toggle contact form success feedback
 $('#form-toggle').on('click', function () {
     $('#contact-form').removeClass('d-none');
     $('.contact-header').removeClass('d-none');

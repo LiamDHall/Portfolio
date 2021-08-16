@@ -1,3 +1,4 @@
+// Toggles the project overlay when hovering over a project image.
 $( document ).ready(function() {
     setTimeout(function() {overlayResize();}, 100);
 });
