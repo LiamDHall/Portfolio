@@ -61,8 +61,9 @@ def home():
             }
 
             # Send confirmation email to sender
+            sub = "Contact Confirmation - Liam Hall Full-Stack Developer",
             msg = Message(
-                subject="Contact Confirmation - Liam Hall Full-Stack Developer",
+                subject=sub,
                 sender=app.config.get("MAIL_USERNAME"),
                 recipients=[sender_email],
                 body=render_template(
