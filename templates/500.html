@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block add_title %}
+| 500 Internal Server
+{% endblock %}
+{% block content %}
+    <section class="error-page text-center text-white">
+        <h1><i class="fas fa-exclamation-circle"></i><br>500 Error</h1>
+        <h2>Internal Server Error</h2>
+        <h2>We Can get you home.</h2>
+        <a href="{{ url_for('home') }}" class="cta-error cta cta--github mt-4">Home</a>
+    </section>
+{% endblock %}

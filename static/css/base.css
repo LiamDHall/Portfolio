@@ -896,3 +896,8 @@ button:focus {
         padding-right: 0;
     }
 }
+
+/*------------------------------------------------------Error Page--*/
+.error-page {
+    padding-top: 80px;
+}

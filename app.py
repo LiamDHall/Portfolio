@@ -4,6 +4,7 @@ from flask import (
 from flask_mail import Mail, Message
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 
@@ -90,6 +91,24 @@ def home():
         "index.html",
         projects=projects,
     )
+
+
+# Error Handler 404 Page Not Found
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    # pass through HTTP errors
+    if isinstance(e, HTTPException):
+        return e
+
+    # now you're handling non-HTTP exceptions only
+    return render_template("500.html", e=e), 500
 
 
 if __name__ == "__main__":
