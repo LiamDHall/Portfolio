@@ -11,6 +11,7 @@ $('.project-tab-btn').on('click', function(){
 $('.sidebar-toggler').on('click', function () {
     $('#navbar').toggleClass('active');
     $('#overlay').toggleClass('overlay-active');
+    $('body').toggleClass('scrollbar-vis');
 });
 
 // Toggle contact form success feedback
