@@ -187,8 +187,8 @@
             </div>
             <!--{{ project.name|upper }} Image-->
             <div class="projects__image col-12 col-lg-4">
-               <a href="{{ project.link }}" target="_blank">
-                  <img class="card-img" src="static/images/{{ project.name|lower }}_desktop_low_res.jpg">
+               <a href="{{ project.link }}" target="_blank" aria-label="open project in new tab">
+                  <img class="card-img" src="static/images/{{ project.name|lower }}_desktop_low_res.jpg" alt="{{ project.name|upper }} Image">
                   <div class="projects__image-tab"></div>
                   <i class="projects__tab-text fas fa-external-link-alt"></i>
                   <div class="projects__img-overlay d-none text-center">
