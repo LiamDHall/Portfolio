@@ -9,9 +9,12 @@ $('.project-tab-btn').on('click', function(){
 
 // Toggle mobile sidebar nav and its overlay
 $('.sidebar-toggler').on('click', function () {
-    $('#navbar').toggleClass('active');
-    $('#overlay').toggleClass('overlay-active');
-    $('body').toggleClass('scrollbar-vis');
+    var windowWidth = $(window).width()
+    if (windowWidth < 1024) {
+        $('#navbar').toggleClass('active');
+        $('#overlay').toggleClass('overlay-active');
+        $('body').toggleClass('scrollbar-vis');
+    }
 });
 
 // Toggle contact form success feedback
