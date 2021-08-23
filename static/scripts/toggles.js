@@ -9,8 +9,9 @@ $('.project-tab-btn').on('click', function(){
 
 // Toggle mobile sidebar nav and its overlay
 $('.sidebar-toggler').on('click', function () {
-    var windowWidth = $(window).width()
-    if (windowWidth <= 1024) {
+    var width = $('body').width()
+    console.log(width)
+    if (width < 1025) {
         $('#navbar').toggleClass('active');
         $('#overlay').toggleClass('overlay-active');
         $('body').toggleClass('scrollbar-vis');
