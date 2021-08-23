@@ -1,11 +1,8 @@
 // Form validation
 const firstNameIn = document.getElementById('first-name');
 const lastNameIn = document.getElementById('last-name');
-const companyNameIn = document.getElementById('company-name');
 const emailIn = document.getElementById('email');
 const messageIn = document.getElementById('message');
-
-const form = document.getElementById('#contact-form');
 
 $('#contact-form').submit(function(e){
     var contactPosY = $('#contact').offset().top;
@@ -25,7 +22,7 @@ $('#contact-form').submit(function(e){
     // Prevent the form from submitting if errors and scroll to top of form
     if (!isFormValid) {
         e.preventDefault();
-        $('#form__error-info').html('Error: Please check your inputs below.')
+        $('#form__error-info').html('Error: Please check your inputs below.');
     }
 });
 
@@ -44,7 +41,7 @@ const checkName = (input) => {
     } 
     // Check if input isnt too long or short
     else if (!isBetween(inputTrim.length, min, max)) {
-        showError(input, `Feild must be between ${min} and ${max} characters.`)
+        showError(input, `Feild must be between ${min} and ${max} characters.`);
     } 
     
     else {
@@ -70,7 +67,7 @@ const checkMessage = () => {
     } 
     // Check if input isnt too long or short
     else if (!isBetween(messageTrim.length, min, max)) {
-        showError(messageIn, `Feild must be between ${min} and ${max} characters.`)
+        showError(messageIn, `Feild must be between ${min} and ${max} characters.`);
     }
     
     else {
@@ -87,7 +84,7 @@ const checkEmail = () => {
     if (!isRequired(email)) {
         showError(emailIn, 'Email cannot be blank.');
     } else if (!isEmailValid(email)) {
-        showError(emailIn, 'Email is not valid.')
+        showError(emailIn, 'Email is not valid.');
     } else {
         showSuccess(emailIn);
         valid = true;
@@ -110,7 +107,7 @@ const showError = (input, message) => {
 
     // Add event listener for input changes
     if ($.inArray('error', input.classList) != 1) {
-        addChangeListener(input)
+        addChangeListener(input);
     }
 
     // Add the error class
@@ -133,25 +130,25 @@ const showSuccess = (input) => {
     // Hide the error message
     const error = formField.querySelector('small');
     error.textContent = '';
-}
+};
 
 function addChangeListener(input) {
-    var id = `#${input.id}`
+    var id = `#${input.id}`;
     $(id).change(function() {
         if (input == firstNameIn) {
-            checkName(firstNameIn)
+            checkName(firstNameIn);
         }
 
         else if(input == lastNameIn) {
-            checkName(lastNameIn)
+            checkName(lastNameIn);
         }
 
         else if(input == emailIn) {
-            checkEmail()
+            checkEmail();
         }
 
         else if(input == messageIn) {
-            checkMessage()
+            checkMessage();
         }
     });
 }

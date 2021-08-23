@@ -1,10 +1,10 @@
 // When scroll position is 0 hide the site header overwise show it
 $(document).ready(function() {
-    siteHeaderVis()
+    siteHeaderVis();
 });
 
 $(window).scroll(function (event) {
-    siteHeaderVis()
+    siteHeaderVis();
 });
 
 function siteHeaderVis() {

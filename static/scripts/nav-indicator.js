@@ -3,11 +3,11 @@ Moves active class on to the correct nav item when scroll position
 enters its corresponding section 
 */
 $(document).ready(function() {
-    navIndicator()
+    navIndicator();
 });
 
 $(window).scroll(function (event) {
-    navIndicator()
+    navIndicator();
 });
 
 // The position of elements change when the site is adpats to a new screen size

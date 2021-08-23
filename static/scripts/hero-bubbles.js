@@ -18,12 +18,12 @@ $(window).resize(function() {
 function resizeWindow() {
     fullWidth = $('body').width();
     fullHeight = $(window).height();
-    $('#hero-bubbles').attr('width', fullWidth).attr('height', fullHeight)
+    $('#hero-bubbles').attr('width', fullWidth).attr('height', fullHeight);
     $('.hero__bg').height(fullHeight);
     floorGlow.height = fullHeight * 0.2;
     floorGlow.width = fullWidth;
     floorGlow.y = fullHeight - fullHeight * 0.2;
-    bubbleArray = []
+    bubbleArray = [];
     loopCounter = 0;
 }
  
@@ -84,8 +84,8 @@ var heroCanvas = {
 
         for(i = 0; i < bubbleArray.length; i++) {   // Draw then apply movement physics and fading. Remove bubble if opacity requirements are met.
             bubbleArray[i].draw();            
-            bubbleArray[i].physics()               
-            bubbleArray[i].removeFaded()                 
+            bubbleArray[i].physics();            
+            bubbleArray[i].removeFaded();               
         }
         loopCounter += 1;                           // Add 1 to the amount of time the loop has been run used to know when to create new bubbles
     },
@@ -111,7 +111,7 @@ var floorGlow = {
         heroCanvas.ctx.closePath();
         heroCanvas.ctx.fill();
     },
-}
+};
 
 // Random Number Generator
 function randomNumber(min, max) { // min and max included 
@@ -119,14 +119,14 @@ function randomNumber(min, max) { // min and max included
 }
 
 // Bubbles
-var bubbleArray = []
+var bubbleArray = [];
 
 function Bubble() {
     this.x = randomNumber(fullWidth*0.01, fullWidth*0.99);
     this.y = randomNumber(floorGlow.y, fullHeight);
     this.speed = floorGlow.height*0.002;
     this.calSpeed = function() {
-        this.speed = randomNumber(floorGlow.height*0.002, floorGlow.height*0.006)
+        this.speed = randomNumber(floorGlow.height*0.002, floorGlow.height*0.006);
     };
     this.drawCount = 0;
     this.radius = 20;
@@ -155,7 +155,7 @@ function Bubble() {
             this.opacity = randomNumber(0.6, 0.8);
         }
         else {                                                                      // Bottom of glow, largest bubbles
-            this.radius = randomNumber(fullHeight*0.004, fullHeight*0.005)
+            this.radius = randomNumber(fullHeight*0.004, fullHeight*0.005);
             this.opacity = randomNumber(0.8, 1);
         }
     };
@@ -163,30 +163,30 @@ function Bubble() {
     // Draws the bubble
     this.draw = function() {
         if (this.drawCount == 0) {
-            this.calVars()
-            this.calSpeed()
+            this.calVars();
+            this.calSpeed();
         }
         heroCanvas.ctx.fillStyle = `rgba(228,83,0,${this.opacity})`;
         heroCanvas.ctx.beginPath();
         heroCanvas.ctx.arc(this.circleCenterX, this.circleCenterY, this.radius, 0, 2 * Math.PI, true);
         heroCanvas.ctx.closePath();
         heroCanvas.ctx.fill();
-        this.drawCount += 1
+        this.drawCount += 1;
     };
 
     // Moves the bubbles up the canvas and reduced their opacity.
     this.physics = function() {
-        this.circleCenterY -= this.speed
+        this.circleCenterY -= this.speed;
         if (this.drawCount == 1) {
-            this.opacityStep = this.opacity/((this.circleCenterY - this.maxHeight)/this.speed)
+            this.opacityStep = this.opacity/((this.circleCenterY - this.maxHeight)/this.speed);
         }
-        this.opacity -= this.opacityStep
+        this.opacity -= this.opacityStep;
     };
 
     // Removes the bubbles from the Bubble Array when their opacity is 0 or less.
     this.removeFaded = function() {
         if (this.opacity <= 0) {
-            bubbleArray.splice(i, 1)
+            bubbleArray.splice(i, 1);
         }
     };
 }

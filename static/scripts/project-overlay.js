@@ -8,9 +8,9 @@ $(window).resize(function() {
 });
 
 function overlayResize() {
-    overlayHeight = $('.card-img').height()
-    overlayHeight = `${overlayHeight}px`
-    $('.projects__img-overlay').height(overlayHeight)
+    overlayHeight = $('.card-img').height();
+    overlayHeight = `${overlayHeight}px`;
+    $('.projects__img-overlay').height(overlayHeight);
 }
 
 $( ".projects__image a" ).hover(
@@ -19,4 +19,4 @@ $( ".projects__image a" ).hover(
     }, function() {
         $(this).children('.projects__img-overlay').addClass('d-none');
     }
-  );
+);
